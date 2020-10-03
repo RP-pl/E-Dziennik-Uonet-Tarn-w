@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
+            app:startDestination="@id/gradesFragment"
+>
+
+    <fragment android:id="@+id/subjectFragment" android:name="com.example.edz_android_gui.SubjectFragment"
+              android:label="SubjectFragment" tools:layout="@layout/subject_frag">
+        <action android:id="@+id/to_gradesFragment" app:destination="@id/gradesFragment"/>
+        <action android:id="@+id/to_examsFragment" app:destination="@id/examsFragment"/>
+        <action android:id="@+id/to_subjectFragment" app:destination="@id/subjectFragment"/>
+    </fragment>
+    <fragment android:id="@+id/gradesFragment" android:name="com.example.edz_android_gui.GradesFragment"
+              android:label="GradesFragment" tools:layout="@layout/grades_frag">
+        <action android:id="@+id/to_subjectFragment" app:destination="@id/subjectFragment"/>
+        <action android:id="@+id/to_examsFragment" app:destination="@id/examsFragment"/>
+        <action android:id="@+id/to_gradesFragment" app:destination="@id/gradesFragment"/>
+    </fragment>
+    <fragment android:id="@+id/examsFragment" android:name="com.example.edz_android_gui.ExamsFragment" android:label="ExamsFragment" tools:layout="@layout/exams_frag">
+        <action android:id="@+id/to_gradesFragment" app:destination="@id/gradesFragment"/>
+        <action android:id="@+id/to_subjectFragment" app:destination="@id/subjectFragment"/>
+        <action android:id="@id/to_examsFragment" app:destination="@+id/examsFragment"/>
+    </fragment>
+</navigation>
