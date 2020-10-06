@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">EDZ-Android-GUI</string>
+    <string name="grades">Grades</string>
+    <string name="textview">TextView</string>
+    <string name="subject">Subject</string>
+    <string name="grade">Grade</string>
+    <string name="weight">Weight</string>
+    <string name="teacher">Teacher</string>
+    <string name="date">Date</string>
+    <string name="description">Description</string>
+    <string name="subjects">Subjects</string>
+</resources>

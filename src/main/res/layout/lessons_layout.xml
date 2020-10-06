@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                                   android:layout_height="match_parent">
+
+    <androidx.gridlayout.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+                android:text="TextView"
+                android:layout_width="100dp"
+                android:layout_height="35dp" app:layout_row="0" app:layout_column="0"
+                android:id="@+id/lessons_lesson" android:paddingLeft="10dp"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="100dp"
+                android:layout_height="35dp" app:layout_row="0" app:layout_column="1"
+                android:id="@+id/lessons_duration"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="100dp"
+                android:layout_height="35dp" app:layout_row="0" app:layout_column="2"
+                android:id="@+id/lessons_mon"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="100dp"
+                android:layout_height="35dp" app:layout_row="0" app:layout_column="3"
+                android:id="@+id/lessons_tue"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="100dp"
+                android:layout_height="35dp" app:layout_row="0" app:layout_column="4"
+                android:id="@+id/lessons_wen"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="100dp"
+                android:layout_height="35dp" app:layout_row="0" app:layout_column="5"
+                android:id="@+id/lessons_thu"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="100dp"
+                android:layout_height="35dp" app:layout_row="0" app:layout_column="6"
+                android:id="@+id/lessons_fri"/>
+    </androidx.gridlayout.widget.GridLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

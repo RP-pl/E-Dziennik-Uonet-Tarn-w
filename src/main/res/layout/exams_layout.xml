@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent">
+
+    <androidx.gridlayout.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="1dp" app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="1dp"
+            android:layout_marginStart="1dp">
+
+        <TextView
+                android:text="Data"
+                android:layout_width="100dp"
+                android:layout_height="43dp" app:layout_row="0" app:layout_column="0"
+                android:id="@+id/textView" android:fontFamily="sans-serif-black" android:paddingLeft="10dp"/>
+        <TextView
+                android:text="Sprawdziany"
+                android:layout_width="300dp"
+                android:layout_height="35dp" app:layout_row="0" app:layout_column="1"
+                android:id="@+id/textView11" android:fontFamily="sans-serif-black"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="100dp"
+                android:layout_height="35dp" app:layout_row="1" app:layout_column="0"
+                android:id="@+id/date_exam" android:paddingLeft="10dp"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="300dp"
+                android:layout_height="35dp" app:layout_row="1" app:layout_column="1"
+                android:id="@+id/exams_exams"/>
+    </androidx.gridlayout.widget.GridLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
