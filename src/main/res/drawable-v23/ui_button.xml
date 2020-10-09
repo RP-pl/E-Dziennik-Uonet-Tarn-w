@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:width="90dip" android:height="30dip">
+        <shape android:shape="rectangle" android:thickness="@dimen/default_gap" android:layout_width="match_parent">
+            <size android:height="20dp" android:width="50dp"/>
+            <solid android:color="#FFFFFF"/>
+        </shape>
+    </item>
+    <item android:width="90dip" android:height="10dip" android:gravity="bottom">
+        <shape  android:shape="rectangle" android:thickness="@dimen/default_gap">
+            <size android:height="5dp" android:width="50dp"/>
+            <corners android:radius="10dp"/>
+            <solid android:color="@color/colorAzureBlue"/>
+        </shape>
+    </item>
+</layer-list>
