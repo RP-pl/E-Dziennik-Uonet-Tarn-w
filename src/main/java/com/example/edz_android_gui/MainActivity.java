@@ -1,5 +1,6 @@
 package com.example.edz_android_gui;
 import android.app.Dialog;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,8 +35,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.dummy_frag);
         Dialog d = new Dialog(this);
+        WindowManager.LayoutParams params = new WindowManager.LayoutParams();
+        params.copyFrom(d.getWindow().getAttributes());
+        params.width = 300;
+        params.height = 150;
+        d.getWindow().setAttributes(params);
         d.setContentView(R.layout.logging_dialog);
         d.setTitle("EDZ");
         TextView log = d.findViewById(R.id.log_field);
@@ -47,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
             d.dismiss();
         });
         d.show();
+        d.setOnCancelListener((dialogInterface)->{
+            d.show();
+        });
         d.setOnDismissListener((v)->{
         RequestQueue r = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://DESKTOP-I5R31U5:64/data/", response -> {
@@ -109,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
             t.addToBackStack(null);
             t.commit();
         }, (error) -> {
-            Toast.makeText(this,error.getMessage(),Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this,error.getMessage(),Toast.LENGTH_SHORT).show();
         }){
             @Override
             public Map<String, String> getHeaders() {

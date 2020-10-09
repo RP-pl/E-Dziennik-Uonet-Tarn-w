@@ -34,11 +34,15 @@ public class MessagesFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
-        ListView lv = (ListView) view.findViewById(R.id.msg_list);
+        ListView lv = view.findViewById(R.id.msg_list);
         lv.setAdapter(new MsgAdapter(this.getContext(),msgList));
         lv.setOnItemClickListener((parent,view1,pos,id)->{
             TextView t = view.findViewById(R.id.msg_text_field);
-            t.setText(msgList.get(pos).getText());
+            StringBuilder s = new StringBuilder();
+            for(String str : msgList.get(pos).getText().split("\\\\n")){
+               s.append(str+"\n");
+            }
+            t.setText(s.toString());
         });
         super.onViewCreated(view, savedInstanceState);
     }
