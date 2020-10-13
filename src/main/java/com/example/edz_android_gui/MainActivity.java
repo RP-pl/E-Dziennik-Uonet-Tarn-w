@@ -3,7 +3,6 @@ import android.app.Dialog;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -19,6 +18,7 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.*;
 import java.util.Map;
+import java.util.Objects;
 import java.util.TreeMap;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     GradesFragment gradesFragment;
     SubjectFragment subjectFragment;
     String xml;
+    //public static int HEIGHT;
+    //public static int WIDTH;
     private LessonsFragment lessonFragment;
     private MessagesFragment msgFragment;
     private String login;
@@ -35,7 +37,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
+        //DisplayMetrics metrics = new DisplayMetrics();
+        //getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        //HEIGHT = metrics.heightPixels;
+        //WIDTH = metrics.widthPixels;
+        Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.dummy_frag);
         Dialog d = new Dialog(this);
         WindowManager.LayoutParams params = new WindowManager.LayoutParams();
@@ -50,13 +56,11 @@ public class MainActivity extends AppCompatActivity {
         Button submit = d.findViewById(R.id.submit_button);
         submit.setOnClickListener((v)->{
             this.login =  log.getText().toString();
-            this.password = (String) pass.getText().toString();
+            this.password = pass.getText().toString();
             d.dismiss();
         });
         d.show();
-        d.setOnCancelListener((dialogInterface)->{
-            d.show();
-        });
+        d.setOnCancelListener((dialogInterface)-> d.show());
         d.setOnDismissListener((v)->{
         RequestQueue r = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://DESKTOP-I5R31U5:64/data/", response -> {
@@ -68,14 +72,11 @@ public class MainActivity extends AppCompatActivity {
                 this.examsFragment = new ExamsFragment(xmlParser.getExams());
                 this.lessonFragment = new LessonsFragment(xmlParser.getLessons());
                 this.msgFragment = new MessagesFragment(xmlParser.getMessages());
-            } catch (ParserConfigurationException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (SAXException e) {
+            } catch (ParserConfigurationException | IOException | SAXException e) {
                 e.printStackTrace();
             }
             setContentView(R.layout.activity_main);
+
             Button grades = findViewById(R.id.grades_button);
 
             grades.setOnClickListener((view)->{

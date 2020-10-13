@@ -17,6 +17,7 @@ import java.util.List;
 
 public class GradesFragment extends Fragment {
     public List<Grade> grades;
+    public GradesFragment(){}
     public GradesFragment(List<Grade> grades){
         this.grades = grades;
     }
