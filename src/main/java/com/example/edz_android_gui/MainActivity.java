@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         d.setOnCancelListener((dialogInterface)-> d.show());
         d.setOnDismissListener((v)->{
         RequestQueue r = Volley.newRequestQueue(this);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://DESKTOP-I5R31U5:64/data/", response -> {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://33c4a71ad0a7.ngrok.io/data/", response -> {
             this.xml = response;
             XMLParser xmlParser = new XMLParser(xml);
             try {
