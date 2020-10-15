@@ -46,7 +46,7 @@ import java.util.regex.Pattern;
 @SuppressWarnings("ALL")
 public class XMLHttpController {
     public static HttpResponse<String> sendRequest(String login, String password, HttpClient httpClient) throws ExecutionException, InterruptedException {
-        HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create("http://127.0.0.1:64/data/")).header("login",login).header("password",password).build();
+        HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create("http://33c4a71ad0a7.ngrok.io/data/")).header("login",login).header("password",password).build();
         CompletableFuture<HttpResponse<String>> response = httpClient.sendAsync(request, HttpResponse.BodyHandlers.ofString());
         HttpResponse<String> resp = response.get();
         return resp;
