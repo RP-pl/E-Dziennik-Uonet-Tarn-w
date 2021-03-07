@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.VideoView;
 import com.example.edz_android_gui.DAO.HourRow;
 import com.example.edz_android_gui.DAO.Message;
 import com.example.edz_android_gui.R;
